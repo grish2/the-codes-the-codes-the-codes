@@ -1,0 +1,41 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdlib.h>
+#include <stdio.h>
+#define PAUSE system("pause")
+#define CLS system("cls")
+#define SIZE 85
+
+hitAKey(char keyStroke ) {
+	int i;
+
+	for (i = 0; i < SIZE; i++) {
+		printf("Enter a list of letters.\n");
+		scanf("%s", keyStroke);
+
+	}
+}
+
+int main() {
+	char keyStroke[SIZE], keys;
+	int choice;
+	do {
+		printf("**************************** MENU **************************************\n\n");
+		printf("1.\t Press a Key(s) on Keyboard\n");
+		printf("2.\t Display how many of each key that has been pressed (high to low)\n");
+		printf("3.\t Display the key(s) that have never been pressed\n");
+		printf("4.\t Display the key that has been pressed the most\n");
+		printf("5.\t Quit the program\n");
+
+		
+		printf("\n\n\t\t\tEnter your choice!\n");
+		scanf("%i", &choice);
+
+		switch (choice) {
+		case 1:
+			keys = hitAKey(keyStroke);
+			PAUSE;
+			break;
+		}
+	} while (choice != 5);
+	PAUSE;
+}
