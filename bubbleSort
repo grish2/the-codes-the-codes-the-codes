@@ -1,0 +1,54 @@
+
+/////////////////////////////////////////////////////////////
+//                       THE BUBBLE SORT
+/////////////////////////////////////////////////////////////
+
+#include<stdio.h>
+#include<stdlib.h>
+#define pause system("pause")
+#define cls system ("cls")
+#define MAXELEMENTS 15
+
+// ProtoType Functions Here
+   void displayArray(int x[], char m[]);
+   char doTheSwitch(int array[], int i, char switchMade);
+        
+        
+main() {
+  int array[MAXELEMENTS] = {54,3,1,4,32,89,78,69,15,47,23,8,9,3,99};
+  int i,bottom, temp;
+  char switchMade;
+  
+  bottom = MAXELEMENTS - 1;
+  displayArray(array, "UNSORTED LIST");
+  
+  do { 
+     switchMade = 'N';
+     for(i=0; i < bottom; i++) { 
+        if(array[i] > array[i+1]) 
+           switchMade = doTheSwitch(array, i, switchMade);
+     } // end for
+     bottom--;
+   }while(switchMade == 'Y');
+   
+  displayArray(array, "THE SORTED LIST"); 
+  pause;
+      
+}//end of main
+
+void displayArray(int a[], char m[50]) {
+     int i;
+     printf("%s: \n", m);
+     for (i=0; i < MAXELEMENTS; i++)
+     printf("Element %2i = %2i.\n", i+1, a[i]);
+      printf("\n"); 
+} // end of displayArray
+
+char doTheSwitch(int array[], int i, char switchMade) {
+    char result = 'Y';
+    int temp;       
+    temp = array[i];
+    array[i] = array[i+1]; 
+    array[i+1]= temp; 
+    return result;
+} // end function doTheSwitch 
