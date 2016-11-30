@@ -5,13 +5,15 @@
 #define CLS system("cls")
 #define SIZE 85
 
+int i;
+char theKeys;
+
 hitAKey(char keyStroke ) {
-	int i;
+	
 
 	for (i = 0; i < SIZE; i++) {
 		printf("Enter a list of letters.\n");
-		scanf("%s", keyStroke);
-
+		scanf("%s", theKeys);
 	}
 }
 
